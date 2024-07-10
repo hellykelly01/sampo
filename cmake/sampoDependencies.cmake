@@ -1,0 +1,5 @@
+find_package(Gaudi REQUIRED)
+find_package(Pythia8 REQUIRED)
+find_package(HepMC3 REQUIRED)
+find_package(GeoModelCore REQUIRED)
+find_package(GeoModelIO REQUIRED) 

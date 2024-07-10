@@ -1,0 +1,3 @@
+header,target,directory
+FourMomentum.h,sampo::GaudiSimpleProjectLib,Examples
+IGeoModelSvc.h,sampo::DetectorDescriptionInterfaces,DetectorDescription/Interfaces

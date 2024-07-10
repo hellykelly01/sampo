@@ -1,0 +1,4 @@
+v2::libExamples.so:MomentumGeneratorAlg
+v2::libExamples.so:MomentumProcessorAlg
+v2::libGenerators.so:Pythia8_i
+v2::libDetectorDescriptionSvcs.so:GeoModelSvc
