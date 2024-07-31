@@ -2,7 +2,7 @@ ApplicationMgr.TopAlg = {"Pythia8_i"};
 Pythia8_i.pythiaSettingsPath = "/cvmfs/nica.jinr.ru/spd/gaudi/sampo/Generators/Pythia8/options/Pythia8.cmnd";
 
 // Number of events to be processed (default is 10)
-ApplicationMgr.EvtMax = 2;
+ApplicationMgr.EvtMax = 4;
 ApplicationMgr.EvtSel = "NONE";
 
 RndmGenSvc.Engine = "HepRndm::Engine<CLHEP::MTwistEngine>";

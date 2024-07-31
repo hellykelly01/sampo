@@ -69,10 +69,11 @@ include Examples/CMakeFiles/sampo_MergeComponents.dir/progress.make
 Examples/CMakeFiles/sampo_MergeComponents: sampo.components
 
 sampo.components: Examples/Examples.components
-sampo.components: Generators/Generators.components
+sampo.components: Generators/Pythia8/Pythia8Generator.components
 sampo.components: DetectorDescription/Services/DetectorDescriptionSvcs.components
+sampo.components: GaudiTestingAlg/GaudiTestingAlg.components
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Merging .components files for sampo"
-	cd /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/Examples && cat /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/Examples/Examples.components /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/Generators/Generators.components /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/DetectorDescription/Services/DetectorDescriptionSvcs.components > /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/sampo.components
+	cd /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/Examples && cat /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/Examples/Examples.components /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/Generators/Pythia8/Pythia8Generator.components /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/DetectorDescription/Services/DetectorDescriptionSvcs.components /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/GaudiTestingAlg/GaudiTestingAlg.components > /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/sampo.components
 
 sampo_MergeComponents: Examples/CMakeFiles/sampo_MergeComponents
 sampo_MergeComponents: sampo.components

@@ -1,0 +1,9 @@
+gaudi_add_module(GaudiTestingAlg
+               SOURCES 
+                    src/TestAlg.cpp
+               LINK 
+                    Gaudi::GaudiKernel
+                    Logger
+                    HepMCIO
+                    HepMC3::HepMC3 
+               )

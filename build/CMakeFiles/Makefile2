@@ -67,12 +67,16 @@ all: CMakeFiles/sampo.dir/all
 all: Examples/all
 all: Generators/all
 all: DetectorDescription/all
+all: Logger/all
+all: GaudiTestingAlg/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
 preinstall: Examples/preinstall
 preinstall: Generators/preinstall
 preinstall: DetectorDescription/preinstall
+preinstall: Logger/preinstall
+preinstall: GaudiTestingAlg/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
@@ -81,6 +85,8 @@ clean: CMakeFiles/target_runtime_paths.dir/clean
 clean: Examples/clean
 clean: Generators/clean
 clean: DetectorDescription/clean
+clean: Logger/clean
+clean: GaudiTestingAlg/clean
 .PHONY : clean
 
 #=============================================================================
@@ -155,19 +161,82 @@ Examples/clean: Examples/CMakeFiles/GaudiSimpleProjectLib.dir/clean
 .PHONY : Examples/clean
 
 #=============================================================================
+# Directory level rules for directory GaudiTestingAlg
+
+# Recursive "all" directory target.
+GaudiTestingAlg/all: GaudiTestingAlg/CMakeFiles/GaudiTestingAlg.dir/all
+.PHONY : GaudiTestingAlg/all
+
+# Recursive "preinstall" directory target.
+GaudiTestingAlg/preinstall:
+.PHONY : GaudiTestingAlg/preinstall
+
+# Recursive "clean" directory target.
+GaudiTestingAlg/clean: GaudiTestingAlg/CMakeFiles/GaudiTestingAlg.dir/clean
+.PHONY : GaudiTestingAlg/clean
+
+#=============================================================================
 # Directory level rules for directory Generators
 
 # Recursive "all" directory target.
-Generators/all: Generators/CMakeFiles/Generators.dir/all
+Generators/all: Generators/IO/all
+Generators/all: Generators/Pythia8/all
 .PHONY : Generators/all
 
 # Recursive "preinstall" directory target.
-Generators/preinstall:
+Generators/preinstall: Generators/IO/preinstall
+Generators/preinstall: Generators/Pythia8/preinstall
 .PHONY : Generators/preinstall
 
 # Recursive "clean" directory target.
-Generators/clean: Generators/CMakeFiles/Generators.dir/clean
+Generators/clean: Generators/IO/clean
+Generators/clean: Generators/Pythia8/clean
 .PHONY : Generators/clean
+
+#=============================================================================
+# Directory level rules for directory Generators/IO
+
+# Recursive "all" directory target.
+Generators/IO/all: Generators/IO/CMakeFiles/HepMCIO.dir/all
+.PHONY : Generators/IO/all
+
+# Recursive "preinstall" directory target.
+Generators/IO/preinstall:
+.PHONY : Generators/IO/preinstall
+
+# Recursive "clean" directory target.
+Generators/IO/clean: Generators/IO/CMakeFiles/HepMCIO.dir/clean
+.PHONY : Generators/IO/clean
+
+#=============================================================================
+# Directory level rules for directory Generators/Pythia8
+
+# Recursive "all" directory target.
+Generators/Pythia8/all: Generators/Pythia8/CMakeFiles/Pythia8Generator.dir/all
+.PHONY : Generators/Pythia8/all
+
+# Recursive "preinstall" directory target.
+Generators/Pythia8/preinstall:
+.PHONY : Generators/Pythia8/preinstall
+
+# Recursive "clean" directory target.
+Generators/Pythia8/clean: Generators/Pythia8/CMakeFiles/Pythia8Generator.dir/clean
+.PHONY : Generators/Pythia8/clean
+
+#=============================================================================
+# Directory level rules for directory Logger
+
+# Recursive "all" directory target.
+Logger/all: Logger/CMakeFiles/Logger.dir/all
+.PHONY : Logger/all
+
+# Recursive "preinstall" directory target.
+Logger/preinstall:
+.PHONY : Logger/preinstall
+
+# Recursive "clean" directory target.
+Logger/clean: Logger/CMakeFiles/Logger.dir/clean
+.PHONY : Logger/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/sampo.dir
@@ -176,7 +245,7 @@ Generators/clean: Generators/CMakeFiles/Generators.dir/clean
 CMakeFiles/sampo.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sampo.dir/build.make CMakeFiles/sampo.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sampo.dir/build.make CMakeFiles/sampo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/CMakeFiles --progress-num=10,11 "Built target sampo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/CMakeFiles --progress-num=20,21 "Built target sampo"
 .PHONY : CMakeFiles/sampo.dir/all
 
 # Build rule for subdir invocation for target.
@@ -226,16 +295,17 @@ CMakeFiles/target_runtime_paths.dir/clean:
 
 # All Build rule for target.
 Examples/CMakeFiles/sampo_MergeConfDB2.dir/all: Examples/CMakeFiles/Examples.dir/all
-Examples/CMakeFiles/sampo_MergeConfDB2.dir/all: Generators/CMakeFiles/Generators.dir/all
+Examples/CMakeFiles/sampo_MergeConfDB2.dir/all: Generators/Pythia8/CMakeFiles/Pythia8Generator.dir/all
 Examples/CMakeFiles/sampo_MergeConfDB2.dir/all: DetectorDescription/Services/CMakeFiles/DetectorDescriptionSvcs.dir/all
+Examples/CMakeFiles/sampo_MergeConfDB2.dir/all: GaudiTestingAlg/CMakeFiles/GaudiTestingAlg.dir/all
 	$(MAKE) $(MAKESILENT) -f Examples/CMakeFiles/sampo_MergeConfDB2.dir/build.make Examples/CMakeFiles/sampo_MergeConfDB2.dir/depend
 	$(MAKE) $(MAKESILENT) -f Examples/CMakeFiles/sampo_MergeConfDB2.dir/build.make Examples/CMakeFiles/sampo_MergeConfDB2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/CMakeFiles --progress-num=13 "Built target sampo_MergeConfDB2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/CMakeFiles --progress-num=23 "Built target sampo_MergeConfDB2"
 .PHONY : Examples/CMakeFiles/sampo_MergeConfDB2.dir/all
 
 # Build rule for subdir invocation for target.
 Examples/CMakeFiles/sampo_MergeConfDB2.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/CMakeFiles 20
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Examples/CMakeFiles/sampo_MergeConfDB2.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/CMakeFiles 0
 .PHONY : Examples/CMakeFiles/sampo_MergeConfDB2.dir/rule
@@ -254,16 +324,17 @@ Examples/CMakeFiles/sampo_MergeConfDB2.dir/clean:
 
 # All Build rule for target.
 Examples/CMakeFiles/sampo_MergeConfdb.dir/all: Examples/CMakeFiles/Examples.dir/all
-Examples/CMakeFiles/sampo_MergeConfdb.dir/all: Generators/CMakeFiles/Generators.dir/all
+Examples/CMakeFiles/sampo_MergeConfdb.dir/all: Generators/Pythia8/CMakeFiles/Pythia8Generator.dir/all
 Examples/CMakeFiles/sampo_MergeConfdb.dir/all: DetectorDescription/Services/CMakeFiles/DetectorDescriptionSvcs.dir/all
+Examples/CMakeFiles/sampo_MergeConfdb.dir/all: GaudiTestingAlg/CMakeFiles/GaudiTestingAlg.dir/all
 	$(MAKE) $(MAKESILENT) -f Examples/CMakeFiles/sampo_MergeConfdb.dir/build.make Examples/CMakeFiles/sampo_MergeConfdb.dir/depend
 	$(MAKE) $(MAKESILENT) -f Examples/CMakeFiles/sampo_MergeConfdb.dir/build.make Examples/CMakeFiles/sampo_MergeConfdb.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/CMakeFiles --progress-num=14 "Built target sampo_MergeConfdb"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/CMakeFiles --progress-num=24 "Built target sampo_MergeConfdb"
 .PHONY : Examples/CMakeFiles/sampo_MergeConfdb.dir/all
 
 # Build rule for subdir invocation for target.
 Examples/CMakeFiles/sampo_MergeConfdb.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/CMakeFiles 20
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Examples/CMakeFiles/sampo_MergeConfdb.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/CMakeFiles 0
 .PHONY : Examples/CMakeFiles/sampo_MergeConfdb.dir/rule
@@ -282,16 +353,17 @@ Examples/CMakeFiles/sampo_MergeConfdb.dir/clean:
 
 # All Build rule for target.
 Examples/CMakeFiles/sampo_MergeComponents.dir/all: Examples/CMakeFiles/Examples.dir/all
-Examples/CMakeFiles/sampo_MergeComponents.dir/all: Generators/CMakeFiles/Generators.dir/all
+Examples/CMakeFiles/sampo_MergeComponents.dir/all: Generators/Pythia8/CMakeFiles/Pythia8Generator.dir/all
 Examples/CMakeFiles/sampo_MergeComponents.dir/all: DetectorDescription/Services/CMakeFiles/DetectorDescriptionSvcs.dir/all
+Examples/CMakeFiles/sampo_MergeComponents.dir/all: GaudiTestingAlg/CMakeFiles/GaudiTestingAlg.dir/all
 	$(MAKE) $(MAKESILENT) -f Examples/CMakeFiles/sampo_MergeComponents.dir/build.make Examples/CMakeFiles/sampo_MergeComponents.dir/depend
 	$(MAKE) $(MAKESILENT) -f Examples/CMakeFiles/sampo_MergeComponents.dir/build.make Examples/CMakeFiles/sampo_MergeComponents.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/CMakeFiles --progress-num=12 "Built target sampo_MergeComponents"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/CMakeFiles --progress-num=22 "Built target sampo_MergeComponents"
 .PHONY : Examples/CMakeFiles/sampo_MergeComponents.dir/all
 
 # Build rule for subdir invocation for target.
 Examples/CMakeFiles/sampo_MergeComponents.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/CMakeFiles 20
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Examples/CMakeFiles/sampo_MergeComponents.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/CMakeFiles 0
 .PHONY : Examples/CMakeFiles/sampo_MergeComponents.dir/rule
@@ -358,30 +430,56 @@ Examples/CMakeFiles/GaudiSimpleProjectLib.dir/clean:
 .PHONY : Examples/CMakeFiles/GaudiSimpleProjectLib.dir/clean
 
 #=============================================================================
-# Target rules for target Generators/CMakeFiles/Generators.dir
+# Target rules for target Generators/IO/CMakeFiles/HepMCIO.dir
 
 # All Build rule for target.
-Generators/CMakeFiles/Generators.dir/all:
-	$(MAKE) $(MAKESILENT) -f Generators/CMakeFiles/Generators.dir/build.make Generators/CMakeFiles/Generators.dir/depend
-	$(MAKE) $(MAKESILENT) -f Generators/CMakeFiles/Generators.dir/build.make Generators/CMakeFiles/Generators.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/CMakeFiles --progress-num=8,9 "Built target Generators"
-.PHONY : Generators/CMakeFiles/Generators.dir/all
+Generators/IO/CMakeFiles/HepMCIO.dir/all:
+	$(MAKE) $(MAKESILENT) -f Generators/IO/CMakeFiles/HepMCIO.dir/build.make Generators/IO/CMakeFiles/HepMCIO.dir/depend
+	$(MAKE) $(MAKESILENT) -f Generators/IO/CMakeFiles/HepMCIO.dir/build.make Generators/IO/CMakeFiles/HepMCIO.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/CMakeFiles --progress-num=10,11 "Built target HepMCIO"
+.PHONY : Generators/IO/CMakeFiles/HepMCIO.dir/all
 
 # Build rule for subdir invocation for target.
-Generators/CMakeFiles/Generators.dir/rule: cmake_check_build_system
+Generators/IO/CMakeFiles/HepMCIO.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Generators/CMakeFiles/Generators.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Generators/IO/CMakeFiles/HepMCIO.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/CMakeFiles 0
-.PHONY : Generators/CMakeFiles/Generators.dir/rule
+.PHONY : Generators/IO/CMakeFiles/HepMCIO.dir/rule
 
 # Convenience name for target.
-Generators: Generators/CMakeFiles/Generators.dir/rule
-.PHONY : Generators
+HepMCIO: Generators/IO/CMakeFiles/HepMCIO.dir/rule
+.PHONY : HepMCIO
 
 # clean rule for target.
-Generators/CMakeFiles/Generators.dir/clean:
-	$(MAKE) $(MAKESILENT) -f Generators/CMakeFiles/Generators.dir/build.make Generators/CMakeFiles/Generators.dir/clean
-.PHONY : Generators/CMakeFiles/Generators.dir/clean
+Generators/IO/CMakeFiles/HepMCIO.dir/clean:
+	$(MAKE) $(MAKESILENT) -f Generators/IO/CMakeFiles/HepMCIO.dir/build.make Generators/IO/CMakeFiles/HepMCIO.dir/clean
+.PHONY : Generators/IO/CMakeFiles/HepMCIO.dir/clean
+
+#=============================================================================
+# Target rules for target Generators/Pythia8/CMakeFiles/Pythia8Generator.dir
+
+# All Build rule for target.
+Generators/Pythia8/CMakeFiles/Pythia8Generator.dir/all: Generators/IO/CMakeFiles/HepMCIO.dir/all
+	$(MAKE) $(MAKESILENT) -f Generators/Pythia8/CMakeFiles/Pythia8Generator.dir/build.make Generators/Pythia8/CMakeFiles/Pythia8Generator.dir/depend
+	$(MAKE) $(MAKESILENT) -f Generators/Pythia8/CMakeFiles/Pythia8Generator.dir/build.make Generators/Pythia8/CMakeFiles/Pythia8Generator.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/CMakeFiles --progress-num=18,19 "Built target Pythia8Generator"
+.PHONY : Generators/Pythia8/CMakeFiles/Pythia8Generator.dir/all
+
+# Build rule for subdir invocation for target.
+Generators/Pythia8/CMakeFiles/Pythia8Generator.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Generators/Pythia8/CMakeFiles/Pythia8Generator.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/CMakeFiles 0
+.PHONY : Generators/Pythia8/CMakeFiles/Pythia8Generator.dir/rule
+
+# Convenience name for target.
+Pythia8Generator: Generators/Pythia8/CMakeFiles/Pythia8Generator.dir/rule
+.PHONY : Pythia8Generator
+
+# clean rule for target.
+Generators/Pythia8/CMakeFiles/Pythia8Generator.dir/clean:
+	$(MAKE) $(MAKESILENT) -f Generators/Pythia8/CMakeFiles/Pythia8Generator.dir/build.make Generators/Pythia8/CMakeFiles/Pythia8Generator.dir/clean
+.PHONY : Generators/Pythia8/CMakeFiles/Pythia8Generator.dir/clean
 
 #=============================================================================
 # Target rules for target DetectorDescription/Services/CMakeFiles/DetectorDescriptionSvcs.dir
@@ -408,6 +506,59 @@ DetectorDescriptionSvcs: DetectorDescription/Services/CMakeFiles/DetectorDescrip
 DetectorDescription/Services/CMakeFiles/DetectorDescriptionSvcs.dir/clean:
 	$(MAKE) $(MAKESILENT) -f DetectorDescription/Services/CMakeFiles/DetectorDescriptionSvcs.dir/build.make DetectorDescription/Services/CMakeFiles/DetectorDescriptionSvcs.dir/clean
 .PHONY : DetectorDescription/Services/CMakeFiles/DetectorDescriptionSvcs.dir/clean
+
+#=============================================================================
+# Target rules for target Logger/CMakeFiles/Logger.dir
+
+# All Build rule for target.
+Logger/CMakeFiles/Logger.dir/all:
+	$(MAKE) $(MAKESILENT) -f Logger/CMakeFiles/Logger.dir/build.make Logger/CMakeFiles/Logger.dir/depend
+	$(MAKE) $(MAKESILENT) -f Logger/CMakeFiles/Logger.dir/build.make Logger/CMakeFiles/Logger.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/CMakeFiles --progress-num=12,13,14,15,16,17 "Built target Logger"
+.PHONY : Logger/CMakeFiles/Logger.dir/all
+
+# Build rule for subdir invocation for target.
+Logger/CMakeFiles/Logger.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/CMakeFiles 6
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Logger/CMakeFiles/Logger.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/CMakeFiles 0
+.PHONY : Logger/CMakeFiles/Logger.dir/rule
+
+# Convenience name for target.
+Logger: Logger/CMakeFiles/Logger.dir/rule
+.PHONY : Logger
+
+# clean rule for target.
+Logger/CMakeFiles/Logger.dir/clean:
+	$(MAKE) $(MAKESILENT) -f Logger/CMakeFiles/Logger.dir/build.make Logger/CMakeFiles/Logger.dir/clean
+.PHONY : Logger/CMakeFiles/Logger.dir/clean
+
+#=============================================================================
+# Target rules for target GaudiTestingAlg/CMakeFiles/GaudiTestingAlg.dir
+
+# All Build rule for target.
+GaudiTestingAlg/CMakeFiles/GaudiTestingAlg.dir/all: Generators/IO/CMakeFiles/HepMCIO.dir/all
+GaudiTestingAlg/CMakeFiles/GaudiTestingAlg.dir/all: Logger/CMakeFiles/Logger.dir/all
+	$(MAKE) $(MAKESILENT) -f GaudiTestingAlg/CMakeFiles/GaudiTestingAlg.dir/build.make GaudiTestingAlg/CMakeFiles/GaudiTestingAlg.dir/depend
+	$(MAKE) $(MAKESILENT) -f GaudiTestingAlg/CMakeFiles/GaudiTestingAlg.dir/build.make GaudiTestingAlg/CMakeFiles/GaudiTestingAlg.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/CMakeFiles --progress-num=8,9 "Built target GaudiTestingAlg"
+.PHONY : GaudiTestingAlg/CMakeFiles/GaudiTestingAlg.dir/all
+
+# Build rule for subdir invocation for target.
+GaudiTestingAlg/CMakeFiles/GaudiTestingAlg.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/CMakeFiles 10
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 GaudiTestingAlg/CMakeFiles/GaudiTestingAlg.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/CMakeFiles 0
+.PHONY : GaudiTestingAlg/CMakeFiles/GaudiTestingAlg.dir/rule
+
+# Convenience name for target.
+GaudiTestingAlg: GaudiTestingAlg/CMakeFiles/GaudiTestingAlg.dir/rule
+.PHONY : GaudiTestingAlg
+
+# clean rule for target.
+GaudiTestingAlg/CMakeFiles/GaudiTestingAlg.dir/clean:
+	$(MAKE) $(MAKESILENT) -f GaudiTestingAlg/CMakeFiles/GaudiTestingAlg.dir/build.make GaudiTestingAlg/CMakeFiles/GaudiTestingAlg.dir/clean
+.PHONY : GaudiTestingAlg/CMakeFiles/GaudiTestingAlg.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

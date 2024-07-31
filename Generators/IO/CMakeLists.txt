@@ -1,0 +1,11 @@
+gaudi_add_library(HepMCIO
+    SOURCES
+      src/HepMCWriter.cpp
+    LINK
+      Gaudi::GaudiKernel
+      ROOT::Tree
+      ROOT::RIO 
+      ROOT::Core 
+      HepMC3::HepMC3 
+      HepMC3::rootIO
+)

@@ -42,30 +42,13 @@ if(NOT DEFINED CMAKE_OBJDUMP)
   set(CMAKE_OBJDUMP "/cvmfs/nica.jinr.ru/spd/external/binutils/2.37/x86_64-centos7-gcc11-opt/bin/objdump")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libGenerators.so" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libGenerators.so")
-    file(RPATH_CHECK
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libGenerators.so"
-         RPATH "")
-  endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE MODULE FILES "/cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/Generators/libGenerators.so")
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libGenerators.so" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libGenerators.so")
-    file(RPATH_CHANGE
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libGenerators.so"
-         OLD_RPATH "/cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/.plugins:/cvmfs/nica.jinr.ru/spd/gaudi/v36r9/lib:/cvmfs/nica.jinr.ru/spd/external/HepMC3/hepmc3-install/lib64:/cvmfs/nica.jinr.ru/spd/external/Boost/1.77.0/x86_64-centos7-gcc11-opt/lib:/cvmfs/nica.jinr.ru/spd/external/tbb/2020-U2/x86_64-centos7-gcc11-opt/lib:/cvmfs/nica.jinr.ru/spd/external/fmt/7.1.3/x86_64-centos7-gcc11-opt/lib64:/cvmfs/nica.jinr.ru/spd/external/Python/3.9.6/x86_64-centos7-gcc11-opt/lib:/cvmfs/nica.jinr.ru/spd/external/ROOT/6.24.06/x86_64-centos7-gcc11-opt/lib:/cvmfs/nica.jinr.ru/spd/external/Pythia/8.311/x86_64-centos7-gcc11-opt/lib:"
-         NEW_RPATH "")
-    if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/cvmfs/nica.jinr.ru/spd/external/binutils/2.37/x86_64-centos7-gcc11-opt/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libGenerators.so")
-    endif()
-  endif()
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/Generators/IO/cmake_install.cmake")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/python/Generators" TYPE FILE FILES
-    "/cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/Generators/genConfDir/Generators/GeneratorsConf.py"
-    "/cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/Generators/genConfDir/Generators/__init__.py"
-    )
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/Generators/Pythia8/cmake_install.cmake")
 endif()
 

@@ -1,7 +1,7 @@
 ApplicationMgr.TopAlg = {"MomentumGeneratorAlg", "MomentumProcessorAlg"};
 
 // Number of events to be processed (default is 10)
-ApplicationMgr.EvtMax = 10000;
+ApplicationMgr.EvtMax = 10;
 ApplicationMgr.EvtSel = "NONE";
 
 // Define Properties

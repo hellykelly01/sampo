@@ -1,3 +1,9 @@
 header,target,directory
 FourMomentum.h,sampo::GaudiSimpleProjectLib,Examples
+HepMCWriter.h,sampo::HepMCIO,Generators/IO
+IHepMCWriter.h,sampo::HepMCIO,Generators/IO
 IGeoModelSvc.h,sampo::DetectorDescriptionInterfaces,DetectorDescription/Interfaces
+ILogSvc.h,sampo::Logger,Logger
+ILogger.h,sampo::Logger,Logger
+LogStream.h,sampo::Logger,Logger
+LogStreamMgr.h,sampo::Logger,Logger

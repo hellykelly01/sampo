@@ -253,17 +253,30 @@ GaudiSimpleProjectLib/fast:
 .PHONY : GaudiSimpleProjectLib/fast
 
 #=============================================================================
-# Target rules for targets named Generators
+# Target rules for targets named HepMCIO
 
 # Build rule for target.
-Generators: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Generators
-.PHONY : Generators
+HepMCIO: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 HepMCIO
+.PHONY : HepMCIO
 
 # fast build rule for target.
-Generators/fast:
-	$(MAKE) $(MAKESILENT) -f Generators/CMakeFiles/Generators.dir/build.make Generators/CMakeFiles/Generators.dir/build
-.PHONY : Generators/fast
+HepMCIO/fast:
+	$(MAKE) $(MAKESILENT) -f Generators/IO/CMakeFiles/HepMCIO.dir/build.make Generators/IO/CMakeFiles/HepMCIO.dir/build
+.PHONY : HepMCIO/fast
+
+#=============================================================================
+# Target rules for targets named Pythia8Generator
+
+# Build rule for target.
+Pythia8Generator: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Pythia8Generator
+.PHONY : Pythia8Generator
+
+# fast build rule for target.
+Pythia8Generator/fast:
+	$(MAKE) $(MAKESILENT) -f Generators/Pythia8/CMakeFiles/Pythia8Generator.dir/build.make Generators/Pythia8/CMakeFiles/Pythia8Generator.dir/build
+.PHONY : Pythia8Generator/fast
 
 #=============================================================================
 # Target rules for targets named DetectorDescriptionSvcs
@@ -277,6 +290,32 @@ DetectorDescriptionSvcs: cmake_check_build_system
 DetectorDescriptionSvcs/fast:
 	$(MAKE) $(MAKESILENT) -f DetectorDescription/Services/CMakeFiles/DetectorDescriptionSvcs.dir/build.make DetectorDescription/Services/CMakeFiles/DetectorDescriptionSvcs.dir/build
 .PHONY : DetectorDescriptionSvcs/fast
+
+#=============================================================================
+# Target rules for targets named Logger
+
+# Build rule for target.
+Logger: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Logger
+.PHONY : Logger
+
+# fast build rule for target.
+Logger/fast:
+	$(MAKE) $(MAKESILENT) -f Logger/CMakeFiles/Logger.dir/build.make Logger/CMakeFiles/Logger.dir/build
+.PHONY : Logger/fast
+
+#=============================================================================
+# Target rules for targets named GaudiTestingAlg
+
+# Build rule for target.
+GaudiTestingAlg: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 GaudiTestingAlg
+.PHONY : GaudiTestingAlg
+
+# fast build rule for target.
+GaudiTestingAlg/fast:
+	$(MAKE) $(MAKESILENT) -f GaudiTestingAlg/CMakeFiles/GaudiTestingAlg.dir/build.make GaudiTestingAlg/CMakeFiles/GaudiTestingAlg.dir/build
+.PHONY : GaudiTestingAlg/fast
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -321,7 +360,10 @@ help:
 	@echo "... DetectorDescriptionSvcs"
 	@echo "... Examples"
 	@echo "... GaudiSimpleProjectLib"
-	@echo "... Generators"
+	@echo "... GaudiTestingAlg"
+	@echo "... HepMCIO"
+	@echo "... Logger"
+	@echo "... Pythia8Generator"
 	@echo "... sampo"
 	@echo "... main.o"
 	@echo "... main.i"

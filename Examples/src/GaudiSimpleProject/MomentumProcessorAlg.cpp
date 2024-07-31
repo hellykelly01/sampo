@@ -28,17 +28,17 @@ StatusCode MomentumProcessorAlg::execute() {
   // we don't get raw pointer, so we don't care about it's deletion
   SmartDataPtr<FourMomentum> fm(eventSvc(), "/Event/1");
   if(!fm){
-    StatusCode::FAILURE;
+    return StatusCode::FAILURE;
   }
-  //info() << fm->GetM() << endmsg;
+  info() << fm->GetM() << endmsg;
   m_px = fm->GetPx();
   m_py = fm->GetPy();
   m_pz = fm->GetPz();
-  status = m_ntuple->write();
-  if (!status.isSuccess()) {
-    error() << "Cannot fill NTuple" << endmsg;
-    return status;
-  }
+  //status = m_ntuple->write();
+  //if (!status.isSuccess()) {
+  //  error() << "Cannot fill NTuple" << endmsg;
+  //  return status;
+  //}
   return StatusCode::SUCCESS;
 }
 

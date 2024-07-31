@@ -49,6 +49,7 @@ StatusCode MomentumGeneratorAlg::initialize() {
   info() << "MEAN P = " << mean_p.value() << endmsg;
   info() << "SIGMA P = " << sigma_p.value() << endmsg;
   info() << "MASS = " << mass.value() << endmsg;
+  count = 0;
   return StatusCode::SUCCESS;
 }
 
@@ -62,10 +63,13 @@ StatusCode MomentumGeneratorAlg::execute() {
   fm->SetMPThetaPhi(mass, p, theta, phi);
   // for some reason line below is not recommended
   // fm->SetMPThetaPhi(mass, generate_p(), generate_theta(), generate_phi());
-  StatusCode sc = put(eventSvc(), "/Event/1", fm);
-  if (sc.isFailure()){
-    return sc;
-  } 
+  if (count == 0){
+    StatusCode sc = put(eventSvc(), "/Event/1", fm);
+    if (sc.isFailure()){
+      return sc;
+    } 
+  }
+  info() << "count = " << count++ << endmsg;
   return StatusCode::SUCCESS;
 }
 

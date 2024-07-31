@@ -1,0 +1,9 @@
+ApplicationMgr.TopAlg = {"TestAlg"};
+// Number of events to be processed (default is 10)
+ApplicationMgr.EvtMax = 20;
+ApplicationMgr.EvtSel = "NONE";
+
+P7LogSvc.msgFormat = "% F%18W%S%7W%R%T %0W%M %t";
+P7LogSvc.timeFormat = "%Y-%m-%d %H:%M:%S";
+//LogSvc.OutputLevel = 5;
+//MessageSvc.setError = {'TestAlg'};

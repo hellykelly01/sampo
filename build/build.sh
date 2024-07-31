@@ -16,6 +16,9 @@ CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH:/cvmfs/nica.jinr.ru/spd/external/HepMC3/hep
 # GeoModel
 CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH:/cvmfs/nica.jinr.ru/spd/external/GeoModel/5.3.0/x86_64-centos7-gcc11-opt/lib/cmake/:/cvmfs/nica.jinr.ru/spd/external/GeoModel/5.3.0/x86_64-centos7-gcc11-opt/lib64/cmake/
 
+# p7
+CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH:/cvmfs/nica.jinr.ru/spd/gaudi/p7/install/lib/libp7-baical
+
 export CMAKE_PREFIX_PATH
 
 cmake -DZLIB_ROOT=/cvmfs/nica.jinr.ru/spd/external/zlib/1.2.11/x86_64-centos7-gcc11-opt/                     \

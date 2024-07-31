@@ -69,10 +69,11 @@ include Examples/CMakeFiles/sampo_MergeConfdb.dir/progress.make
 Examples/CMakeFiles/sampo_MergeConfdb: sampo.confdb
 
 sampo.confdb: Examples/genConfDir/Examples/Examples.confdb
-sampo.confdb: Generators/genConfDir/Generators/Generators.confdb
+sampo.confdb: Generators/Pythia8/genConfDir/Pythia8/Pythia8Generator.confdb
 sampo.confdb: DetectorDescription/Services/genConfDir/Services/DetectorDescriptionSvcs.confdb
+sampo.confdb: GaudiTestingAlg/genConfDir/GaudiTestingAlg/GaudiTestingAlg.confdb
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Merging .confdb files for sampo"
-	cd /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/Examples && cat /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/Examples/genConfDir/Examples/Examples.confdb /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/Generators/genConfDir/Generators/Generators.confdb /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/DetectorDescription/Services/genConfDir/Services/DetectorDescriptionSvcs.confdb > /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/sampo.confdb
+	cd /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/Examples && cat /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/Examples/genConfDir/Examples/Examples.confdb /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/Generators/Pythia8/genConfDir/Pythia8/Pythia8Generator.confdb /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/DetectorDescription/Services/genConfDir/Services/DetectorDescriptionSvcs.confdb /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/GaudiTestingAlg/genConfDir/GaudiTestingAlg/GaudiTestingAlg.confdb > /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/sampo.confdb
 
 sampo_MergeConfdb: Examples/CMakeFiles/sampo_MergeConfdb
 sampo_MergeConfdb: sampo.confdb

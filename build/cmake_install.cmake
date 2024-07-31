@@ -61,6 +61,16 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/DetectorDescription/cmake_install.cmake")
 endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/Logger/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/GaudiTestingAlg/cmake_install.cmake")
+endif()
+
 if(CMAKE_INSTALL_COMPONENT)
   set(CMAKE_INSTALL_MANIFEST "install_manifest_${CMAKE_INSTALL_COMPONENT}.txt")
 else()

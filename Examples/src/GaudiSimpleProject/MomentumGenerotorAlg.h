@@ -30,6 +30,7 @@ private:
   double generate_p();
   double generate_theta();
   double generate_phi();
+  int count;
 };
 
 #endif // MOMENTUMGENERATORALG_H

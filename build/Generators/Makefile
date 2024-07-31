@@ -65,6 +65,18 @@ CMAKE_BINARY_DIR = /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/cvmfs/nica.jinr.ru/spd/external/CMake/3.20.0/x86_64-centos7-gcc11-opt/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/cvmfs/nica.jinr.ru/spd/external/CMake/3.20.0/x86_64-centos7-gcc11-opt/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -118,18 +130,6 @@ edit_cache:
 edit_cache/fast: edit_cache
 .PHONY : edit_cache/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/cvmfs/nica.jinr.ru/spd/external/CMake/3.20.0/x86_64-centos7-gcc11-opt/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/cvmfs/nica.jinr.ru/spd/external/CMake/3.20.0/x86_64-centos7-gcc11-opt/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
 # The main all target
 all: cmake_check_build_system
 	cd /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build && $(CMAKE_COMMAND) -E cmake_progress_start /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/CMakeFiles /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build/Generators//CMakeFiles/progress.marks
@@ -161,44 +161,6 @@ depend:
 	cd /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-# Convenience name for target.
-Generators/CMakeFiles/Generators.dir/rule:
-	cd /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Generators/CMakeFiles/Generators.dir/rule
-.PHONY : Generators/CMakeFiles/Generators.dir/rule
-
-# Convenience name for target.
-Generators: Generators/CMakeFiles/Generators.dir/rule
-.PHONY : Generators
-
-# fast build rule for target.
-Generators/fast:
-	cd /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build && $(MAKE) $(MAKESILENT) -f Generators/CMakeFiles/Generators.dir/build.make Generators/CMakeFiles/Generators.dir/build
-.PHONY : Generators/fast
-
-Pythia8/Pythia8_i.o: Pythia8/Pythia8_i.cpp.o
-.PHONY : Pythia8/Pythia8_i.o
-
-# target to build an object file
-Pythia8/Pythia8_i.cpp.o:
-	cd /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build && $(MAKE) $(MAKESILENT) -f Generators/CMakeFiles/Generators.dir/build.make Generators/CMakeFiles/Generators.dir/Pythia8/Pythia8_i.cpp.o
-.PHONY : Pythia8/Pythia8_i.cpp.o
-
-Pythia8/Pythia8_i.i: Pythia8/Pythia8_i.cpp.i
-.PHONY : Pythia8/Pythia8_i.i
-
-# target to preprocess a source file
-Pythia8/Pythia8_i.cpp.i:
-	cd /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build && $(MAKE) $(MAKESILENT) -f Generators/CMakeFiles/Generators.dir/build.make Generators/CMakeFiles/Generators.dir/Pythia8/Pythia8_i.cpp.i
-.PHONY : Pythia8/Pythia8_i.cpp.i
-
-Pythia8/Pythia8_i.s: Pythia8/Pythia8_i.cpp.s
-.PHONY : Pythia8/Pythia8_i.s
-
-# target to generate assembly for a file
-Pythia8/Pythia8_i.cpp.s:
-	cd /cvmfs/nica.jinr.ru/spd/gaudi/sampo/build && $(MAKE) $(MAKESILENT) -f Generators/CMakeFiles/Generators.dir/build.make Generators/CMakeFiles/Generators.dir/Pythia8/Pythia8_i.cpp.s
-.PHONY : Pythia8/Pythia8_i.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -211,10 +173,6 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... Generators"
-	@echo "... Pythia8/Pythia8_i.o"
-	@echo "... Pythia8/Pythia8_i.i"
-	@echo "... Pythia8/Pythia8_i.s"
 .PHONY : help
 
 
