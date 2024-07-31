@@ -1,8 +1,0 @@
-v2::libExamples.so:MomentumGeneratorAlg
-v2::libExamples.so:MomentumProcessorAlg
-v2::libPythia8Generator.so:HepMCWriter
-v2::libPythia8Generator.so:Pythia8_i
-v2::libDetectorDescriptionSvcs.so:GeoModelSvc
-v2::libGaudiTestingAlg.so:HepMCWriter
-v2::libGaudiTestingAlg.so:P7LogSvc
-v2::libGaudiTestingAlg.so:TestAlg
